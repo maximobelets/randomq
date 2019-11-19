@@ -5,9 +5,9 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'RANDOM':
-            const randomNumber = Math.floor(Math.random() * 2);
+            const randomAnswer = Math.floor(Math.random() * 2) >= 1 ? 'YES' : 'NO';
             return {
-                answer: randomNumber >= 1 ? 'YES' : 'NO'
+                answer: randomAnswer 
             }
         default:
             return state;
