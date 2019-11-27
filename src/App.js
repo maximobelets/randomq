@@ -3,17 +3,7 @@ import './App.css';
 
 import { connect } from 'react-redux';
 
-import random from './redux/actions/random';
-
-// const App = () => {
-//   return (
-//     <section>
-//       <h4>RandomQ.</h4>
-//       <button>Random</button>
-//       <h4>{ this.props.answer }</h4>
-//     </section>
-//   );
-// };
+import random from './redux/actions/actions';
 
 class App extends Component {
   render() {

@@ -1,6 +1,8 @@
+import { RANDOM } from "./actionTypes";
+
 const random = () => {
     return {
-        type: 'RANDOM'
+        type: RANDOM
     };
 };
 
