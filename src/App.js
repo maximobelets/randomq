@@ -1,32 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
-
-import { connect } from 'react-redux';
 
 import random from './redux/actions/actions';
 
-class App extends Component {
-  render() {
-    return (
-        <section>
-       <h4>RandomQ.</h4>
-       <button onClick={ this.props.random }>Random</button>
-       <h4>{ this.props.answer }</h4>
-     </section>
-    );
-  }
-};
+export const App = () => {
+	const answer = useSelector(state => state.answer);
+	const dispatch = useDispatch();
 
-const mapStateToProps = (state) => {
-  return {
-    answer: state.answer
-  };
-};
+	const buttonClick = () => dispatch(random());
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    random: () => dispatch(random())
-  };
+	return (
+		<section>
+			<h4>RandomQ.</h4>
+			<button onClick={buttonClick}>Random</button>
+			<h4>{answer}</h4>
+		</section>
+	);
 };
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
